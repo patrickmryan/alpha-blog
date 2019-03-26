@@ -11,5 +11,10 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new'
 
   resources :users, except: [:new]
-  
+
+  #    url path     ctrl     method   will look for SessionsController {plural}
+  get    'login',  to: 'sessions#new'
+  post   'login',  to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
+
 end
