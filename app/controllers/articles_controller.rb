@@ -17,10 +17,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    #render plain: params[:article].inspect
     @article = Article.new(article_params)
-    #@article.user = User.first
-    #puts("inside article#create, current_user = #{current_user}")
     @article.user = current_user
 
     if @article.save
